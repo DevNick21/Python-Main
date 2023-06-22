@@ -1,2 +1,1 @@
-if guess != letter:
-        #     lives = lives - 1
+mjqqt
