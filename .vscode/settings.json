@@ -5,5 +5,5 @@
   "python.formatting.provider": "none",
   "python.analysis.typeCheckingMode": "off",
   "cSpell.words": ["Charmander", "Pikachu", "Squirtle"],
-  "cSpell.ignoreWords": ["bami"]
+  "cSpell.ignoreWords": ["bami", "exitonclick"]
 }
