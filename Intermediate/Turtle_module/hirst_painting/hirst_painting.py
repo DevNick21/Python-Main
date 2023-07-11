@@ -8,7 +8,7 @@ tim.hideturtle()
 
 # import colorgram
 
-# colors = colorgram.extract("Intermediate/Turtle_module/image.jpg", 50)
+# colors = colorgram.extract("Intermediate/Turtle_module?hirst_painting/image.jpg", 50)
 
 # color_list = []
 
