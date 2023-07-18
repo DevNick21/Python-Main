@@ -31,6 +31,14 @@ class Snake:
         new_tim.goto(position)
         self.tims.append(new_tim)
 
+    def reset_snake(self):
+        for tim in self.tims:
+            tim.goto(1000, 1000)
+        self.tims.clear()
+        self.create_snake()
+        self.head = self.tims[0]
+
+
 
     def extend(self):
         """adds another square turtle object which makes for the extension of the tail by calling the add_tim method and passing the last tim with -1 then getting its position so that the new tim would be rendered there"""

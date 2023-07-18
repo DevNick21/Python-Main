@@ -57,16 +57,16 @@ while game_is_on:
     #Detect collision with wall
     #Checks for the head coordinates to see if it is within the range of the screen walls
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_is_on = False
-        scoreboard.game_over()
+        scoreboard.reset_game()
+        snake.reset_snake()
 
 
     #Detect collision with tail
     #Loops through tims(list of all the tims) and checks if the head distance is less than 10 blocks so it can turn off the game
     for tim in snake.tims[1:]:
         if snake.head.distance(tim) < 10:
-            game_is_on = False
-            scoreboard.game_over()
+            scoreboard.reset_game()
+            snake.reset_snake()
 
 
 

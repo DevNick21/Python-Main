@@ -18,6 +18,7 @@ score = Scoreboard()
 
 screen.listen()
 screen.onkey(player.move_up, "Up")
+screen.title("Turtle Crossing")
 
 
 
