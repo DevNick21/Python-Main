@@ -1,0 +1,1 @@
+type(grey_sq)
