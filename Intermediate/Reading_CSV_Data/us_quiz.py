@@ -52,10 +52,8 @@ while len(guessed_states) < 50 and end_game == False:
     state_data = data["state"]
 
     if answer_state == "Stop":
-        missing_states = []
-        for state in all_states:
-            if state not in guessed_states:
-                missing_states.append(state)
+        missing_states = [
+            state for state in all_states if state not in guessed_states]
         df = pandas.DataFrame(missing_states)
         df.to_csv("Reading_CSV_Data/states_to learn.csv")
         end_game = True
