@@ -13,9 +13,10 @@ import random
 import smtplib
 from email.message import EmailMessage
 
-
+#!CORRECT INFORMATION IS THE GITIGNORE FILE
 MY_EMAIL = "iheanachoaustin07@gmail.com"
-PASSWORD = "qgohhkcxjcbiyqxk"
+PASSWORD = ""
+#!CORRECT INFORMATION IS THE GITIGNORE FILE
 
 
 birthday_df = pandas.read_csv("sending_emails/birthday_wisher/birthdays.csv")
