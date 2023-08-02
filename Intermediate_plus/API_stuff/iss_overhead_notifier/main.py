@@ -3,10 +3,15 @@ from datetime import datetime
 from email.message import EmailMessage
 import smtplib
 import time
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-MY_EMAIL = "iheanachoaustin07@gmail.com"
-PASSWORD = ""
+MY_EMAIL = os.getenv("MY_EMAIL")
+PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 MY_LAT = 6.501240  # Your latitude
 MY_LONG = 3.349788  # Your longitude

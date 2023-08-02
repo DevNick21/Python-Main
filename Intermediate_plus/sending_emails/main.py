@@ -2,15 +2,19 @@ import smtplib
 from email.message import EmailMessage
 import datetime as dt
 import random
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Sender and Receiver Details
-my_email = "iheanachoaustin07@gmail.com"
+my_email = os.getenv("MY_EMAIL")
 other_email = "iheanacho.ekene@hotmail.com"
-password = "qgohhkcxjcbiyqxk"
+password = os.getenv("EMAIL_PASSWORD")
 
 
 # Reading Files
-with open("birthday_wisher/quotes.txt", "r") as quote:
+with open("sending_emails\quotes.txt", "r") as quote:
     list_of_quotes = quote.readlines()
 
 

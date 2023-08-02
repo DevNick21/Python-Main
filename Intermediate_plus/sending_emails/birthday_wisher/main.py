@@ -11,12 +11,13 @@ import datetime as dt
 import pandas
 import random
 import smtplib
+import os
 from email.message import EmailMessage
+from dotenv import load_dotenv
+load_dotenv()
 
-#!CORRECT INFORMATION IS THE GITIGNORE FILE
-MY_EMAIL = "iheanachoaustin07@gmail.com"
-PASSWORD = ""
-#!CORRECT INFORMATION IS THE GITIGNORE FILE
+MY_EMAIL = os.getenv("MY_EMAIL")
+PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 
 birthday_df = pandas.read_csv("sending_emails/birthday_wisher/birthdays.csv")

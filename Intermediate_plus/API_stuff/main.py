@@ -1,7 +1,12 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-MY_LATITUDE = 6.431307
-MY_LONGITUDE = 3.546247
+load_dotenv()
+
+
+MY_LATITUDE = os.getenv("MY_LAT")
+MY_LONGITUDE = os.getenv("MY_LONG")
 
 # res = requests.get(url="http://api.open-notify.org/iss-now.json")
 # res.raise_for_status()
