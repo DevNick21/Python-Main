@@ -11,8 +11,8 @@ twilio_phone = os.getenv("twilio_phone")
 
 
 # LAT = 6.501240
-LAT = 54.5742
-LON = 1.2350
+LAT = os.getenv("MY_LAT")
+LON = os.getenv("MY_LONG")
 # LON = 3.349788
 params = {
     "lat": LAT,
