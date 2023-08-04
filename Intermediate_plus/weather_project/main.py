@@ -15,8 +15,8 @@ LAT = os.getenv("MY_LAT")
 LON = os.getenv("MY_LONG")
 # LON = 3.349788
 params = {
-    "lat": LAT,
-    "lon": LON,
+    "lat": 53.3409,
+    "lon": 0.2611,
     "appid": api_key,
     "exclude": "current,minutely,daily",
 }
