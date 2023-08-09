@@ -64,16 +64,23 @@ def percentage_change():
 
 
 def send_news(news):
-    client = Client(account_sid, auth_token)
+    # ! Twilio API no longer available, free trial exhausted
+    # client = Client(account_sid, auth_token)
 
-    message = client.messages \
-                    .create(
-                        body=news,
-                        from_=twilio_phone,
-                        to='+2348100839367'
-                    )
+    # message = client.messages \
+    #                 .create(
+    #                     body=news,
+    #                     from_=twilio_phone,
+    #                     to='+2348100839367'
+    #                 )
 
-    print(message.status)
+    # print(message.status)
+    token = os.getenv("telegram_api_key")
+    chat_id = os.getenv("my_telegram_chat_id")
+    url_req = "https://api.telegram.org/bot" + token + \
+        "/sendMessage" + "?chat_id=" + chat_id + "&text=" + news
+    results = requests.get(url_req)
+    print(results.status_code)
 
 
 now = dt.datetime.now()
@@ -91,9 +98,8 @@ else:
             articles = data["articles"][:3]
         except IndexError:
             pass
-
-    main_message = [
-        f"{STOCK}: {percentage}\nHeadline: {article['title']}\nBrief: {article['description']}\n" for article in articles]
-
-    for message in main_message:
-        send_news(message)
+        else:
+            main_message = [
+                f"{STOCK}: {percentage}\nHeadline: {article['title']}\nBrief: {article['description']}\n" for article in articles]
+            for message in main_message:
+                send_news(message)
