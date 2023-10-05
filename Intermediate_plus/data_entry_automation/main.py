@@ -15,4 +15,4 @@ res = requests.get(on_listings)
 res.raise_for_status()
 zillow_web_page = res.text
 soup = BeautifulSoup(zillow_web_page, "html.parser")
-print(soup)
+print(sooup)
