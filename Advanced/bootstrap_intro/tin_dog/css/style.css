@@ -1,0 +1,71 @@
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.profile-img {
+  height: 100px;
+  border-radius: 50%;
+}
+.button_color {
+  background-color: black;
+}
+#brands{
+  display: flex;
+  justify-content: space-evenly;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#testimonial{
+  background-color: rgba(128, 128, 128, 0.071);
+  padding: 80px;
+}
+#testimonial h2 {
+  margin: 10px;
+  text-align: center;
+}
+.profile{
+  margin: 50px;
+}
+.text{
+  font-weight: 300;
+  font-size: larger;
+  margin-top: 10px;
+}
+#footer{
+  height: 20em;
+}
+#title{
+  padding: 45px;
+  height: 90vh;
+}
+.iphone{
+  height: 33em;
+}
+.title_container{
+  display: flex;
+  justify-content: space-around;
+}
