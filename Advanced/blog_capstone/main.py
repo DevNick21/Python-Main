@@ -8,7 +8,7 @@ current_year = dt.now().strftime("%Y")
 
 
 def blogs():
-    url = "https://api.npoint.io/c790b4d5cab58020d391"
+    url = "https://api.jsonbin.io/v3/qs/6545301a0574da7622c1a0f9"
     res = requests.get(url)
     res.raise_for_status()
     blog_data = res.json()
@@ -18,13 +18,13 @@ def blogs():
 @app.route('/')
 def home():
     blog_data = blogs()
-    return render_template("index.html", posts=blog_data)
+    return render_template("index.html", posts=blog_data['record'])
 
 
 @app.route('/posts/<num>')
 def get_posts(num):
     num = int(num)
-    blog_data = blogs()
+    blog_data = blogs()['record']
     for blog in blog_data:
         if blog["id"] == num:
             blog_title = blog["title"]
