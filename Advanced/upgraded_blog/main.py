@@ -1,9 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 
 app = Flask(__name__)
 
-res = requests.get("https://api.jsonbin.io/v3/qs/6545301a0574da7622c1a0f9")
+res = requests.get("https://api.jsonbin.io/v3/qs/654790f012a5d37659952f8d")
 res.raise_for_status()
 data = res.json()["record"]
 
@@ -18,9 +18,21 @@ def about():
     return render_template("about.html")
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['POST', 'GET'])
 def contact():
-    return render_template("contact.html")
+    if request.method == 'POST':
+        name = request.form["name"]
+        email = request.form["email"]
+        phone_number = request.form["phone"]
+        message = request.form["message"]
+        print(f"""
+Hi there I want to get in touch with you, my name is {name} and my email is {email} and my phone number is {phone_number}
+this is what i want to say
+{message}
+              """)
+        return render_template("contact.html", success=True)
+    else:
+        return render_template("contact.html")
 
 
 @app.route('/post/<num>')
